@@ -1,1 +1,1 @@
-from mrcry import python, ruby
+from . import python, ruby

@@ -27,13 +27,13 @@ character that specifies the source, and a second mapping that specifies the des
 
 ###Some examples:
 
-`<leader>rlm` - **r**un **l**ine into **m**essage window.
-
-`<leader>rss` - **r**un **s**election into **s**election.
-
-`<leader>rbv` - **r**un **b**uffer into **v**ertical split.
+    <leader>rlm - (r)un (l)ine into (m)essage window.
+    <leader>rss - (r)un (s)election into (s)election.
+    <leader>rbv - (r)un (b)uffer into (v)ertical split.
 
 ## Languages supported
 
 Currently only supports python, but adding other languages should be easy, so if you'd like to see your language
-supported, have a look into contributing! I'm happy to help if anything's unclear.
+supported, have a look into contributing! I'm happy to help.
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/1edad31ead71e4ec07982c0dd7ac2dc8 "githalytics.com")](http://githalytics.com/nielsmadan/mercury)
