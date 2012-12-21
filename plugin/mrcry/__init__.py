@@ -1,1 +1,1 @@
-import python
+from mrcry import python, ruby
