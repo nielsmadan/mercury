@@ -1,34 +1,33 @@
-import re
-import subprocess
-
 import vim
 import venom
 
-
-def run_python_file():
-    vim.command("w !python<CR>")
+import mrcry
 
 
-def get_start_white_space(line):
-    pass
-    # return re.match(
+def execute(exe_fn_name, code):
+    ft_mod = getattr(mrcry, vim.opt.filetype)
+    exe_fun = getattr(ft_mod, exe_fn_name)
+    return exe_fun(code)
 
 
-def remove_minimal_indent(lines):
-    pass
-    # minimal_indent = min([
+def build_executor(src_fn, exe_fn_name, dst_fn):
+    def __inner():
+        return dst_fn(execute(exe_fn_name, src_fn()))
+
+    return __inner
 
 
-def run_python_line_to_message():
-    line = venom.get_current_line(read_only=True)
-    if not line.startswith("print"):
-        line = "print " + line
+def from_line():
+    return venom.get_current_line(read_only=True)
 
-    print subprocess.check_output(['python', '-c', line])
+
+def to_message(output):
+    print output
+
 
 # def append_hello_world():
 #     print "APPENDING HELLO WORLD"
 #     vim.current.buffer.append("Hello World")
 
-venom.nnoremap("<leader>r", run_python_line_to_message)
+venom.nnoremap("<leader>rlm", build_executor(from_line, "execute_expr", to_message))
 print "MERCURY LOADED"
