@@ -21,8 +21,11 @@
 ### misc
 
 * `[ ]` handle std err
-* `[ ]` option to set start of mapping sequence
-* `[ ]` tests for everything
+* `[ ]` options
+    * `[ ]` option to set start of mapping sequence
+    * `[ ]` option to disable default mapping
+    * `[ ]` all functions available as vimscript
+* `[ ]` basic test coverage
     * `[ ]` less ugly tests for everything
     * `[ ]` fix stdout for tests
 * `[ ]` help file

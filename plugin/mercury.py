@@ -29,5 +29,7 @@ def to_message(output):
 #     print "APPENDING HELLO WORLD"
 #     vim.current.buffer.append("Hello World")
 
+venom.py_fn_to_vim_command("MercuryLM", build_executor(from_line, "execute_expr", to_message))
+
 venom.nnoremap("<leader>rlm", build_executor(from_line, "execute_expr", to_message))
 print "MERCURY LOADED"
