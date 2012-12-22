@@ -27,9 +27,9 @@
 ### misc
 
 * `[ ]` options
-    * `[ ]` option to set start of mapping sequence
+    * `[X]` option to set start of mapping sequence
     * `[ ]` option to disable default mapping
-    * `[ ]` all functions available as vimscript
+    * `[X]` all functions available as vimscript
 * `[ ]` basic test coverage
     * `[ ]` less ugly tests
     * `[ ]` fix stdout for tests
