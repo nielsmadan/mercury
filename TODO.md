@@ -2,13 +2,19 @@
 
 ## version 1.0
 
-### implement sources
+### sources
 
 * `[X]` line
-* `[ ]` selection
+* `[X]` selection
 * `[ ]` buffer
 
-### implement destinations
+### execution
+
+* `[ ]` remove indentation (for python)
+* `[ ]` import standard modules if they are imported in file
+* `[ ]` handle std err
+
+### destinations
 
 * `[ ]` register
     * `[ ]` option to set default register
@@ -20,12 +26,11 @@
 
 ### misc
 
-* `[ ]` handle std err
 * `[ ]` options
     * `[ ]` option to set start of mapping sequence
     * `[ ]` option to disable default mapping
     * `[ ]` all functions available as vimscript
 * `[ ]` basic test coverage
-    * `[ ]` less ugly tests for everything
+    * `[ ]` less ugly tests
     * `[ ]` fix stdout for tests
 * `[ ]` help file

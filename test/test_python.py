@@ -22,13 +22,13 @@ class TestE2E(unittest.TestCase):
         venom.should_receive("get_current_line").with_args(read_only=True).and_return(
                 "[x for x in range(3)]").once()
 
-        mercury.should_call("src.from_line").and_return("[x for x in range(3)]").once()
+        mercury.should_call("src.line").and_return("[x for x in range(3)]").once()
 
         mercury.should_call("execute.run").with_args("[x for x in range(3)]").and_return(
                 "[0, 1, 2]\n").once()
 
         mercury.should_call("dst.to_message").with_args("[0, 1, 2]\n").and_return(None).once()
 
-        _rlm = mercury.execute.build(mrcry.src.from_line, mrcry.dst.to_message)
+        _rlm = mercury.execute.build(mrcry.src.line, mrcry.dst.to_message)
 
         _rlm()

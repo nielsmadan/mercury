@@ -8,4 +8,5 @@ if 'venom' not in sys.modules:
     import venom
     venom.get_current_line = lambda *args, **kwargs: None
     venom.nnoremap = lambda *args, **kwargs: None
+    venom.vnoremap = lambda *args, **kwargs: None
     venom.py_fn_to_vim_command = lambda *args, **kwargs: None
