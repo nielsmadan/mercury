@@ -17,7 +17,8 @@
 ### destinations
 
 * `[ ]` register
-    * `[ ]` option to set default register
+    * `[ ]` use default register
+    * `[ ]` prompt for register
 * `[ ]` selection
 * `[ ]` split
     * `[ ]` horizontal split
@@ -28,8 +29,9 @@
 
 * `[ ]` options
     * `[X]` option to set start of mapping sequence
-    * `[ ]` option to disable default mapping
+    * `[X]` option to disable default mapping
     * `[X]` all functions available as vimscript
+    * `[ ]` option to set default register
 * `[ ]` basic test coverage
     * `[ ]` less ugly tests
     * `[ ]` fix stdout for tests
