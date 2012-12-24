@@ -6,11 +6,12 @@
 
 * `[X]` line
 * `[X]` selection
-* `[ ]` buffer
+* `[X]` buffer
 
 ### execution
 
 * `[ ]` remove indentation (for python)
+* `[X]` add print to last line of code if it doesn't have one.
 * `[ ]` import standard modules if they are imported in file
 * `[ ]` handle std err
 
@@ -32,7 +33,8 @@
     * `[X]` option to disable default mapping
     * `[X]` all functions available as vimscript
     * `[ ]` option to set default register
-* `[ ]` basic test coverage
+* `[ ]` test coverage
     * `[ ]` less ugly tests
     * `[ ]` fix stdout for tests
+    * `[ ]` test for execution part
 * `[ ]` help file

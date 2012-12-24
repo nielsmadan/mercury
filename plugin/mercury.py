@@ -6,21 +6,19 @@ from mrcry import src, dst, execute
 venom.py_fn_to_vim_command("MercuryLM", execute.build(src.line, dst.to_message))
 venom.py_fn_to_vim_command("MercurySM", execute.build(src.selection, dst.to_message),
                            allow_range=True)
+venom.py_fn_to_vim_command("MercuryBM", execute.build(src.buffer, dst.to_message))
 
-if vim.g.is_defined("mercury_no_defaults") and vim.g.mercury_no_defaults == "1":
+if "mercury_no_defaults" in vim.g and vim.g.mercury_no_defaults == "1":
     pass
 
 else:
-    if vim.g.is_defined("mercury_leader_seq"):
+    if "mercury_leader_seq" in vim.g:
         leader_seq = vim.g.mercury_leader_seq
     else:
         leader_seq = "<leader>r"
 
-    # def append_hello_world():
-    #     print "APPENDING HELLO WORLD"
-    #     vim.current.buffer.append("Hello World")
-
     vim.map.nnoremap("%slm" % leader_seq, ":MercuryLM<CR>")
     vim.map.vnoremap("%ssm" % leader_seq, ":MercurySM<CR>")
+    vim.map.nnoremap("%sbm" % leader_seq, ":MercuryBM<CR>")
 
 print "MERCURY LOADED"
