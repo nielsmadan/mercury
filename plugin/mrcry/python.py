@@ -17,10 +17,11 @@ def execute(code):
 
 def _find_last_expr(code_lines):
     for x in range(len(code_lines) - 1, -1, -1):
+        code = '\n'.join(code_lines[x:])
         try:
-            parser.suite('\n'.join(code_lines[x:]))
+            parser.suite(code)
             try:
-                parser.expr('\n'.join(code_lines[x:]))
+                parser.expr(code)
             except:  # last statement is not an expression
                 return None
 
