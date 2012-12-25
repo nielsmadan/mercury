@@ -11,7 +11,24 @@ if 'vim' not in sys.modules:
     vim.command = lambda *args, **kwargs: None
     vim.eval = lambda *args, **kwargs: None
 
-    class _dummy(object):
+    class _dummy_opt(object):
         filetype = None
 
-    vim.opt = _dummy
+    vim.opt = _dummy_opt
+
+    class _dummy_map(object):
+        @staticmethod
+        def nnoremap(*args, **kwargs):
+            return None
+
+        @staticmethod
+        def vnoremap(*args, **kwargs):
+            return None
+
+    vim.map = _dummy_map
+
+    class _dummy_g(object):
+        def __contains__(self, name):
+            return False
+
+    vim.g = _dummy_g()

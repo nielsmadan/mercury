@@ -1,5 +1,21 @@
 # TODOs
 
+## version 2.0
+
+### sources
+
+* `[ ]` any text object
+
+### destinations
+
+* `[ ]` bubble
+
+## version 1.1
+
+### execution
+
+* `[ ]` smarter code parsing for final print statement
+
 ## version 1.0
 
 ### sources
