@@ -43,8 +43,9 @@
     * `[ ]` prompt for register
 * `[ ]` selection
 * `[ ]` split
-    * `[ ]` horizontal split
-    * `[ ]` vertical split
+    * `[X]` horizontal split
+    * `[X]` vertical split
+    * `[ ]` handle splitbelow and splitrighw somehow
 * `[X]` message window
 
 ### misc
