@@ -8,6 +8,11 @@ venom.py_fn_to_vim_command("MercurySM", execute.build(src.selection, dst.to_mess
                            allow_range=True)
 venom.py_fn_to_vim_command("MercuryBM", execute.build(src.buffer, dst.to_message))
 
+venom.py_fn_to_vim_command("MercuryLV", execute.build(src.line, dst.to_vert_split))
+venom.py_fn_to_vim_command("MercurySV", execute.build(src.selection, dst.to_vert_split),
+                           allow_range=True)
+venom.py_fn_to_vim_command("MercuryBV", execute.build(src.buffer, dst.to_vert_split))
+
 if "mercury_no_defaults" in vim.g and vim.g.mercury_no_defaults == "1":
     pass
 
@@ -20,5 +25,9 @@ else:
     vim.map.nnoremap("%slm" % leader_seq, ":MercuryLM<CR>")
     vim.map.vnoremap("%ssm" % leader_seq, ":MercurySM<CR>")
     vim.map.nnoremap("%sbm" % leader_seq, ":MercuryBM<CR>")
+
+    vim.map.nnoremap("%slv" % leader_seq, ":MercuryLV<CR>")
+    vim.map.nnoremap("%ssv" % leader_seq, ":MercurySV<CR>")
+    vim.map.nnoremap("%sbv" % leader_seq, ":MercuryBV<CR>")
 
 print "MERCURY LOADED"

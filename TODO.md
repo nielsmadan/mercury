@@ -15,6 +15,11 @@
 ### execution
 
 * `[ ]` smarter code parsing for final print statement
+* `[ ]` print assignment statement
+
+### misc
+
+* `[ ]` only load language specific module on first loading a file?
 
 ## version 1.0
 
