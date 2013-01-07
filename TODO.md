@@ -14,12 +14,15 @@
 
 ### execution
 
+* `[ ]` vimscript support
 * `[ ]` smarter code parsing for final print statement
 * `[ ]` print assignment statement
+* `[ ]` get stdout / stderr from killed process
 
 ### misc
 
 * `[ ]` only load language specific module on first loading a file?
+* `[ ]` less ugly tests
 
 ## version 1.0
 
@@ -34,7 +37,7 @@
 * `[ ]` remove indentation (for python)
 * `[X]` add print to last line of code if it doesn't have one.
 * `[ ]` import standard modules if they are imported in file
-* `[ ]` handle std err
+* `[X]` handle std err
 
 ### destinations
 
@@ -45,7 +48,8 @@
 * `[ ]` split
     * `[X]` horizontal split
     * `[X]` vertical split
-    * `[ ]` handle splitbelow and splitrighw somehow
+    * `[ ]` handle splitbelow and splitright
+    * `[ ]` set split to be nofile (so it can be closed without prompt for saving)
 * `[X]` message window
 
 ### misc
@@ -56,7 +60,6 @@
     * `[X]` all functions available as vimscript
     * `[ ]` option to set default register
 * `[ ]` test coverage
-    * `[ ]` less ugly tests
     * `[ ]` fix stdout for tests
     * `[ ]` test for execution part
 * `[ ]` help file

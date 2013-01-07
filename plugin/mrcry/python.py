@@ -1,5 +1,5 @@
-import subprocess
 import parser
+import mrcry.util
 
 
 def execute(code):
@@ -12,7 +12,7 @@ def execute(code):
             last_expr = "print " + last_expr
             code_lines[last_expr_start_line:] = last_expr.split("\n")
 
-    return subprocess.check_output(['python', '-c', '\n'.join(code_lines)])
+    return mrcry.util.run_command(['python', '-c', '\n'.join(code_lines)])
 
 
 def _find_last_expr(code_lines):
