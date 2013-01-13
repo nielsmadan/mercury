@@ -1,5 +1,6 @@
 import parser
 import mrcry.util
+import re
 
 
 def execute(code):
@@ -12,7 +13,18 @@ def execute(code):
             last_expr = "print " + last_expr
             code_lines[last_expr_start_line:] = last_expr.split("\n")
 
+    code_lines = remove_indent(code_lines)
+
     return mrcry.util.run_command(['python', '-c', '\n'.join(code_lines)])
+
+
+def remove_indent(code_lines):
+    _indent_regex = r'^(\s*).*'
+    res = re.match(_indent_regex, code_lines[0])
+    if len(res.group(1)) > 0:
+        code_lines = [line[len(res.group(1)):] for line in code_lines]
+
+    return code_lines
 
 
 def _find_last_expr(code_lines):
