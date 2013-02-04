@@ -38,5 +38,3 @@ else:
     vim.map.nnoremap("%slh" % leader_seq, ":MercuryLH<CR>")
     vim.map.vnoremap("%ssh" % leader_seq, ":MercurySH<CR>")
     vim.map.nnoremap("%sbh" % leader_seq, ":MercuryBH<CR>")
-
-print "MERCURY LOADED"

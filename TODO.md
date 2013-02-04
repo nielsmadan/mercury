@@ -14,10 +14,11 @@
 
 ### execution
 
-* `[ ]` vimscript support
+* `[ ]` vimscript: support it
 * `[ ]` smarter code parsing for final print statement
 * `[ ]` print assignment statement
 * `[ ]` get stdout / stderr from killed process
+* `[ ]` python: import any modules if they are imported in file
 
 ### misc
 
@@ -36,7 +37,7 @@
 
 * `[X]` remove indentation (for python)
 * `[X]` add print to last line of code if it doesn't have one.
-* `[ ]` import standard modules if they are imported in file
+* `[ ]` import some subset of standard modules if they are imported in file
 * `[X]` handle std err
 
 ### destinations
