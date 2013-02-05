@@ -3,7 +3,14 @@ import mrcry.util
 import re
 
 
-def execute(code):
+_STD_MODULES = ['re', 'random', 'itertools', 'string']
+_IMPORT_1_REGEX = re.compile(r'^import (\S+)')
+_IMPORT_2_REGEX = re.compile(r'^from (\S+) import (\S+)')
+
+_INDENT_REGEX = re.compile(r'^(\s*).*')
+
+
+def execute(code, buff):
     code_lines = code.split("\n")
     last_expr_start_line = _find_last_expr(code_lines)
 
@@ -13,18 +20,33 @@ def execute(code):
             last_expr = "print " + last_expr
             code_lines[last_expr_start_line:] = last_expr.split("\n")
 
-    code_lines = remove_indent(code_lines)
+    code_lines = _remove_indent(code_lines)
 
-    return mrcry.util.run_command(['python', '-c', '\n'.join(code_lines)])
+    import_lines = _find_std_imports(buff)
+
+    return mrcry.util.run_command(['python', '-c', '\n'.join(import_lines + code_lines)])
 
 
-def remove_indent(code_lines):
-    _indent_regex = r'^(\s*).*'
-    res = re.match(_indent_regex, code_lines[0])
+def _remove_indent(code_lines):
+    res = re.match(_INDENT_REGEX, code_lines[0])
     if len(res.group(1)) > 0:
         code_lines = [line[len(res.group(1)):] for line in code_lines]
 
     return code_lines
+
+
+def _find_std_imports(lines):
+    res = []
+    for line in lines:
+        m = re.search(_IMPORT_1_REGEX, line)
+        if m is not None and m.group(1) in _STD_MODULES:
+            res.append(line)
+        else:
+            m = re.search(_IMPORT_2_REGEX, line)
+            if m is not None and m.group(1) in _STD_MODULES:
+                res.append(line)
+
+    return res
 
 
 def _find_last_expr(code_lines):

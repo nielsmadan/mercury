@@ -1,7 +1,7 @@
 import subprocess
 
 
-def execute(expr):
+def execute(expr, buff):
     if not expr.startswith("print"):
         expr = "print " + expr
 

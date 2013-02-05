@@ -37,7 +37,7 @@
 
 * `[X]` remove indentation (for python)
 * `[X]` add print to last line of code if it doesn't have one.
-* `[ ]` import some subset of standard modules if they are imported in file
+* `[X]` import some subset of standard modules if they are imported in file
 * `[X]` handle std err
 
 ### destinations
