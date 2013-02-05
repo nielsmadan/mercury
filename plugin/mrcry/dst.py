@@ -5,6 +5,14 @@ def to_message(output):
     print output
 
 
+def to_register(output):
+    if "mercury_default_register" in vim.g:
+        vim.registers.set(vim.g.mercury_default_register, output)
+    else:
+        destination_register = vim.fn.input("Destination register: ")
+        vim.registers.set(destination_register, output)
+
+
 def to_vert_split(output):
     vim.win.vnew()
     vim.current.buffer[:] = output.split('\n')[:-1]

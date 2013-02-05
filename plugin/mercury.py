@@ -18,6 +18,11 @@ venom.py_fn_to_vim_command("MercurySH", execute.build(src.selection, dst.to_hor_
                            allow_range=True)
 venom.py_fn_to_vim_command("MercuryBH", execute.build(src.buffer, dst.to_hor_split))
 
+venom.py_fn_to_vim_command("MercuryLR", execute.build(src.line, dst.to_register))
+venom.py_fn_to_vim_command("MercurySR", execute.build(src.selection, dst.to_register),
+                           allow_range=True)
+venom.py_fn_to_vim_command("MercuryBR", execute.build(src.buffer, dst.to_register))
+
 if "mercury_no_defaults" in vim.g and vim.g.mercury_no_defaults == "1":
     pass
 
@@ -38,3 +43,7 @@ else:
     vim.map.nnoremap("%slh" % leader_seq, ":MercuryLH<CR>")
     vim.map.vnoremap("%ssh" % leader_seq, ":MercurySH<CR>")
     vim.map.nnoremap("%sbh" % leader_seq, ":MercuryBH<CR>")
+
+    vim.map.nnoremap("%slr" % leader_seq, ":MercuryLR<CR>")
+    vim.map.vnoremap("%ssr" % leader_seq, ":MercurySR<CR>")
+    vim.map.nnoremap("%sbr" % leader_seq, ":MercuryBR<CR>")

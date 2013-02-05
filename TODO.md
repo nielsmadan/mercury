@@ -42,9 +42,9 @@
 
 ### destinations
 
-* `[ ]` register
-    * `[ ]` use default register
-    * `[ ]` prompt for register
+* `[X]` register
+    * `[X]` use default register
+    * `[X]` prompt for register
 * `[ ]` selection
 * `[ ]` split
     * `[X]` horizontal split
@@ -55,11 +55,11 @@
 
 ### misc
 
-* `[ ]` options
+* `[X]` options
     * `[X]` option to set start of mapping sequence
     * `[X]` option to disable default mapping
     * `[X]` all functions available as vimscript
-    * `[ ]` option to set default register
+    * `[X]` option to set default register
 * `[ ]` test coverage
     * `[ ]` fix stdout for tests
     * `[ ]` test for execution part
