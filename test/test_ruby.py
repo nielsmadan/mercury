@@ -20,12 +20,12 @@ class TestE2E(unittest.TestCase):
         flexmock.flexmock(mercury)
 
         venom.should_receive("get_current_line").with_args(read_only=True).and_return(
-                "[1, 2, 3, 4].map {|x| x * 2}").once()
+            "[1, 2, 3, 4].map {|x| x * 2}").once()
 
         mercury.should_call("src.line").and_return("[1, 2, 3, 4].map {|x| x * 2}").once()
 
-        mercury.should_call("execute.run").with_args("[1, 2, 3, 4].map {|x| x * 2}").and_return(
-                "[2, 4, 6, 8]").once()
+        mercury.should_call("execute.run").with_args("[1, 2, 3, 4].map {|x| x * 2}", "").and_return(
+            "[2, 4, 6, 8]").once()
 
         mercury.should_call("dst.to_message").with_args("[2, 4, 6, 8]").and_return(None).once()
 

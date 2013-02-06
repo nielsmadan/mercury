@@ -32,3 +32,9 @@ if 'vim' not in sys.modules:
             return False
 
     vim.g = _dummy_g()
+
+    class _dummy_current(object):
+        def __init__(self):
+            self.buffer = ''
+
+    vim.current = _dummy_current()
