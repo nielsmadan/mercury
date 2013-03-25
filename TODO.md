@@ -19,6 +19,7 @@
 * `[ ]` print assignment statement
 * `[ ]` get stdout / stderr from killed process
 * `[ ]` python: import any modules if they are imported in file
+* `[ ]` for all languages, add options to specify executable and options
 
 ### misc
 
@@ -39,6 +40,7 @@
 * `[X]` add print to last line of code if it doesn't have one.
 * `[X]` import some subset of standard modules if they are imported in file
 * `[X]` handle std err
+* `[X]` javascript support
 
 ### destinations
 

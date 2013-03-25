@@ -1,1 +1,1 @@
-from mrcry import python, ruby, src, dst, execute
+from mrcry import javascript, python, ruby, src, dst, execute
