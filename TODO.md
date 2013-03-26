@@ -19,12 +19,17 @@
 * `[ ]` print assignment statement
 * `[ ]` get stdout / stderr from killed process
 * `[ ]` python: import any modules if they are imported in file
+* `[ ]` python: look into dealing with python3.
 * `[ ]` for all languages, add options to specify executable and options
 
 ### misc
 
 * `[ ]` only load language specific module on first loading a file?
 * `[ ]` less ugly tests
+* `[ ]` create options to overwrite splitbelow and splitright
+* `[ ]` make timeout configurable
+
+--------------------------------------------------------------------------------
 
 ## version 1.0
 
@@ -51,7 +56,6 @@
 * `[ ]` split
     * `[X]` horizontal split
     * `[X]` vertical split
-    * `[ ]` handle splitbelow and splitright
     * `[ ]` set split to be nofile (so it can be closed without prompt for saving)
 * `[X]` message window
 
@@ -65,4 +69,5 @@
 * `[ ]` test coverage
     * `[ ]` fix stdout for tests
     * `[ ]` test for execution part
-* `[ ]` help file
+* `[X]` help file
+* `[X]` README
