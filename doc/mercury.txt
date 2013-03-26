@@ -61,6 +61,7 @@ Some examples:
     <leader>rlm - (r)un (l)ine into (m)essage window.
     <leader>rss - (r)un (s)election into (s)election.
     <leader>rbv - (r)un (b)uffer into (v)ertical split.
+    <leader>rlra - (r)un (l)line into (r)egister (a).
 
 --------------------------------------------------------------------------------
 
@@ -87,6 +88,15 @@ corresponding to source/destination mnemonics. >
 
 These two mappings would correspond to line to message (LM) and selection to
 message (SM).
+
+It is also possible to setup a default register, so you do not have to enter one
+every time: >
+
+    let g:mercury_default_register="a"
+<
+
+This means '<leader>rlr' will send the output right to the 'a' register without
+prompting.
 
 ================================================================================
 
