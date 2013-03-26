@@ -1,0 +1,128 @@
+*mercury.txt* execute any frament of code in any language in from vim
+
+
+                 _____   ___________   ____  __ _________ ___.__.~
+                /     \_/ __ \_  __ \_/ ___\|  |  \_  __ <   |  |~
+               |  Y Y  \  ___/|  | \/\  \___|  |  /|  | \/\___  |~
+               |__|_|  /\___  >__|    \___  >____/ |__|   / ____|~
+                     \/     \/            \/              \/     ~
+
+================================================================================
+CONTENTS                                                      *mercury-contents*
+
+    1. General..............................|mercury-general|
+        1.1 Mappings........................|mercury-mappings|
+        1.2 Options.........................|mercury-options|
+    2. Languages............................|mercury-languages|
+        2.1 Python..........................|mercury-python|
+        2.2 Ruby............................|mercury-ruby|
+        2.3 Javascript......................|mercury-javascript|
+    3. Contribute...........................|mercury-contribute|
+
+================================================================================
+
+1. General                                                     *mercury-general*
+
+mercury allows you to take a fragment of code from some source (current line,
+selection, buffer), execute the code intelligently, and then write the result
+to some destination (message window, selection, register, new split).
+
+Features include:
+
+ * choose the correct interpreter with the correct switches, given the filetype.
+ * execute it in a separate thread and terminate it after a timeout, so an
+   endless loop will not freeze vim.
+ * some language specific smartness (e.g. handling imports).
+
+--------------------------------------------------------------------------------
+
+1.1 Mappings                                                  *mercury-mappings*
+
+Default mappings are mnemonic. All mappings start with some configurable start
+sequence (default: `<leader>r`), followed by one character that specifies the
+source, and a second character that specifies the destination.
+
+ Current sources:
+
+    l = line
+    s = selection
+    b = buffer
+
+ Current destinations:
+
+    r = register
+    s = selection
+    h = horizontal split
+    v = vertical split
+    m = message window
+
+Some examples:
+
+    <leader>rlm - (r)un (l)ine into (m)essage window.
+    <leader>rss - (r)un (s)election into (s)election.
+    <leader>rbv - (r)un (b)uffer into (v)ertical split.
+
+--------------------------------------------------------------------------------
+
+1.2 Options                                                  *mercury-mappings*
+
+You can change the start sequence (`<leader>r`) to something else, while
+retaining all the source / destination mappings. For example to change the
+start sequence to `<leader>m`: >
+
+    let g:mercury_leader_seq="<leader>m"
+<
+
+The option to disable all default mappings: >
+
+    let g:mercury_no_defaults=1
+<
+
+To manually set mappings or add additional mappings, use Mercury functions,
+corresponding to source/destination mnemonics. >
+
+    nnoremap <leader>rr :MercuryLM<CR>
+    vnoremap <leader>rr :MercurySM<CR>
+<
+
+These two mappings would correspond to line to message (LM) and selection to
+message (SM).
+
+================================================================================
+
+2. Languages                                                 *mercury-languages*
+
+Currently supported: python (2), ruby, and javascript.
+
+--------------------------------------------------------------------------------
+
+2.1 Python                                                      *mercury-python*
+
+Python has some special fancy features that other languages do not (yet) have.
+If the last line in your code fragment is an expression (like a function call
+or a list comprehension), a print statement will automatically be added in
+front of it. Indentation of all lines will be normalized according to the
+indentation of the first line. There is also tentative support for automatic
+import of some standard modules (currently re, random, itertools, string) if
+they are imported at the top of the current file.
+
+At this point, only tested with python 2.
+
+--------------------------------------------------------------------------------
+
+2.2 Ruby                                                          *mercury-ruby*
+
+Requires ruby on the command line to work.
+
+--------------------------------------------------------------------------------
+
+2.3 Javascript                                              *mercury-javascript*
+
+Javascript requires node on the command line.
+
+================================================================================
+
+3. Contribute                                               *mercury-contribute*
+
+Your language is not supported? Adding another language is easy, just have a
+look at the code or shoot me a message.
