@@ -21,8 +21,10 @@ def to_selection(output):
 def to_vert_split(output):
     vim.win.vnew()
     vim.current.buffer[:] = output.split('\n')[:-1]
+    vim.extbuffer(vim.current.buffer).buftype = "nofile"
 
 
 def to_hor_split(output):
     vim.win.new()
     vim.current.buffer[:] = output.split('\n')[:-1]
+    vim.extbuffer(vim.current.buffer).buftype = "nofile"

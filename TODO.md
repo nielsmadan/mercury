@@ -53,10 +53,10 @@
     * `[X]` use default register
     * `[X]` prompt for register
 * `[X]` selection
-* `[ ]` split
+* `[X]` split
     * `[X]` horizontal split
     * `[X]` vertical split
-    * `[ ]` set split to be nofile (so it can be closed without prompt for saving)
+    * `[X]` set split to be nofile (so it can be closed without prompt for saving)
 * `[X]` message window
 
 ### misc
