@@ -52,7 +52,7 @@
 * `[X]` register
     * `[X]` use default register
     * `[X]` prompt for register
-* `[ ]` selection
+* `[X]` selection
 * `[ ]` split
     * `[X]` horizontal split
     * `[X]` vertical split

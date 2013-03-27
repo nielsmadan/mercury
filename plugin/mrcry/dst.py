@@ -1,3 +1,4 @@
+import venom
 import vim
 
 
@@ -11,6 +12,10 @@ def to_register(output):
     else:
         destination_register = vim.fn.input("Destination register: ")
         vim.registers.set(destination_register, output)
+
+
+def to_selection(output):
+    venom.replace_visual_selection(output)
 
 
 def to_vert_split(output):
