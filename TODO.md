@@ -1,33 +1,47 @@
 # TODOs
 
-## version 2.0
+## future
 
 ### sources
 
 * `[ ]` any text object
 
+### execution
+
+* `[ ]` add support for compiled languages.
+
 ### destinations
 
 * `[ ]` bubble
+
+### misc
+
+* `[ ]` end to end testing
+
+--------------------------------------------------------------------------------
 
 ## version 1.1
 
 ### execution
 
-* `[ ]` vimscript: support it
-* `[ ]` smarter code parsing for final print statement
-* `[ ]` print assignment statement
+* `[ ]` add support for: perl, vimscript, clojure, php
 * `[ ]` get stdout / stderr from killed process
+* `[ ]` option: for all languages, add options to specify executable and options
+* `[ ]` option: add default option if filetype isn't recognized
+* `[ ]` option: allow option to override one filetype with another
+
+* `[ ]` python: smarter code parsing for final print statement
+* `[ ]` python: print assignment statement
 * `[ ]` python: import any modules if they are imported in file
 * `[ ]` python: look into dealing with python3.
-* `[ ]` for all languages, add options to specify executable and options
+
+### options
 
 ### misc
 
 * `[ ]` only load language specific module on first loading a file?
-* `[ ]` less ugly tests
-* `[ ]` create options to overwrite splitbelow and splitright
-* `[ ]` make timeout configurable
+* `[ ]` option: create options to override splitbelow and splitright
+* `[ ]` option: make timeout configurable
 
 --------------------------------------------------------------------------------
 
@@ -66,8 +80,8 @@
     * `[X]` option to disable default mapping
     * `[X]` all functions available as vimscript
     * `[X]` option to set default register
-* `[ ]` test coverage
-    * `[ ]` fix stdout for tests
-    * `[ ]` test for execution part
+* `[X]` test coverage
+    * `[X]` fix stdout for tests
+    * `[X]` test for execution part
 * `[X]` help file
 * `[X]` README

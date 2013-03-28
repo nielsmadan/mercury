@@ -36,6 +36,8 @@ else:
         leader_seq = vim.g.mercury_leader_seq
     else:
         leader_seq = "<leader>r"
+        vim.map.vnoremap("%sr" % leader_seq, ":MercurySM<CR>")
+        vim.map.nnoremap("%sr" % leader_seq, ":MercuryBM<CR>")
 
     vim.map.nnoremap("%slm" % leader_seq, ":MercuryLM<CR>")
     vim.map.vnoremap("%ssm" % leader_seq, ":MercurySM<CR>")
