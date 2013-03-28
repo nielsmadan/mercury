@@ -1,9 +1,9 @@
 import vim
-import mrcry
+import mercury
 
 
 def run(code, buff):
-    ft_mod = getattr(mrcry, vim.opt.filetype)
+    ft_mod = getattr(mercury, vim.opt.filetype)
     exe_fun = getattr(ft_mod, "execute")
     return exe_fun(code, buff)
 

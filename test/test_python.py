@@ -1,34 +1,67 @@
 import unittest
-import flexmock
+from nose.tools import eq_
+import string
 
-import vim_stub
-import venom_stub
-
-import venom
-import vim
-
-import plugin.mercury as mercury
-import mrcry
+import mercury
 
 
-class TestE2E(unittest.TestCase):
-    def setUp(self):
-        flexmock.flexmock(venom)
-        flexmock.flexmock(vim.opt).should_receive('filetype').and_return('python')
+class TestPython(unittest.TestCase):
+    def test_execute_simple(self):
+        result = mercury.python.execute("print 'this'", "")
 
-    def test_rlm(self):
-        flexmock.flexmock(mercury)
+    def test_execute_auto_import_type_one(self):
+        result = mercury.python.execute("print string.lowercase", ["import re\n", "import string\n"])
 
-        venom.should_receive("get_current_line").with_args(read_only=True).and_return(
-                "[x for x in range(3)]").once()
+        eq_(string.lowercase + "\n", result)
 
-        mercury.should_call("src.line").and_return("[x for x in range(3)]").once()
+        eq_(result, "this\n")
 
-        mercury.should_call("execute.run").with_args("[x for x in range(3)]", '').and_return(
-                "[0, 1, 2]\n").once()
+    def test_execute_simple_multiple(self):
+        result = mercury.python.execute("print 'this'\nprint 'that'", "")
 
-        mercury.should_call("dst.to_message").with_args("[0, 1, 2]\n").and_return(None).once()
+        eq_(result, "this\nthat\n")
 
-        _rlm = mercury.execute.build(mrcry.src.line, mrcry.dst.to_message)
+    def test_execute_simple_indented(self):
+        result = mercury.python.execute("    print 'this'", "")
 
-        _rlm()
+        eq_(result, "this\n")
+
+    def test_execute_complex_indented(self):
+        result = mercury.python.execute(
+                                    "     def foo(x):\n"
+                                    "         return x * x\n"
+
+                                    "     print foo(3)", "")
+
+        eq_(result, "9\n")
+
+    def test_execute_auto_import_type_one(self):
+        result = mercury.python.execute("print string.lowercase", ["import re\n", "import string\n"])
+
+        eq_(string.lowercase + "\n", result)
+
+    def test_execute_auto_import_type_two(self):
+        result = mercury.python.execute("print lowercase",
+                                      ["import re\n", "from string import lowercase"])
+
+        eq_(string.lowercase + "\n", result)
+
+    def test_execute_add_print_expression_simple(self):
+        result = mercury.python.execute("1 + 1", "")
+
+        eq_(result, "2\n")
+
+    def test_execute_add_print_expression_multi_line(self):
+        result = mercury.python.execute("foo = 'what'\n1 + 1", "")
+
+        eq_(result, "2\n")
+
+    def test_execute_add_print_expression_multi_print(self):
+        result = mercury.python.execute("print 'this'\nfoo = 'what'\n1 + 1", "")
+
+        eq_(result, "this\n2\n")
+
+    def test_execute_add_print_last_statement(self):
+        result = mercury.python.execute("print 'this'\nfoo = 'what'", "")
+
+        eq_(result, "this\n")

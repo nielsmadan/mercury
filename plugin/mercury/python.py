@@ -1,5 +1,5 @@
 import parser
-import mrcry.util
+import mercury.util
 import re
 
 
@@ -24,7 +24,7 @@ def execute(code, buff):
 
     import_lines = _find_std_imports(buff)
 
-    return mrcry.util.run_command(['python', '-c', '\n'.join(import_lines + code_lines)])
+    return mercury.util.run_command(['python', '-c', '\n'.join(import_lines + code_lines)])
 
 
 def _remove_indent(code_lines):

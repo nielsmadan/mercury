@@ -1,7 +1,7 @@
 import venom
 import vim
 
-from mrcry import src, dst, execute
+from mercury import src, dst, execute
 
 venom.py_fn_to_vim_command("MercuryLM", execute.build(src.line, dst.to_message))
 venom.py_fn_to_vim_command("MercurySM", execute.build(src.selection, dst.to_message),
