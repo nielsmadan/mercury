@@ -13,14 +13,18 @@ Currently supports python, ruby and javascript (using node) with more to come so
 
 ## installation
 
-`mercury` requires [venom](https://github.com/nielsmadan/venom), which in turn requires vim to be
-compiled with python support (most vim distributions have are). Vundle or pathogen are highly
-recommended for installation.
+`mercury` requires [venom](https://github.com/nielsmadan/venom), which in turn requires vim to be compiled with python support (most vim distributions are). Vundle or pathogen are highly recommended for installation.
+
+### vundle
 
     Bundle 'nielsmadan/venom'
     Bundle 'nielsmadan/mercury'
 
 For what it's worth, the order actually does not matter.
+
+### pathogen
+
+Clone the repositories into your pathogen directory, or get them as zip files from vim.org [here](http://www.vim.org/scripts/script.php?script_id=4491) and [here](http://www.vim.org/scripts/script.php?script_id=4492) and unzip them into the pathogen directory.
 
 ## mappings
 
