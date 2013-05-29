@@ -134,6 +134,11 @@ python 3).
 
 Requires ruby on the command line to work.
 
+If only a single line is given to be executed and it does not start with a print
+or a puts, a print is prepended to the line and a newline is appended to the
+output. This might lead to some strange behavior when the line includes multiple
+expressions.
+
 --------------------------------------------------------------------------------
                                                             *mercury-javascript*
 2.3 Javascript~
