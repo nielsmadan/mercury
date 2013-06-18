@@ -102,6 +102,12 @@ one every time:
 
 This means '<leader>rlr' will send the output directly to the 'a' register.
 
+Some filetypes automatically map to other filetypes for purposes of execution.
+For example "qml" files map to "javascript". It is possible to add such mappings:
+>
+    let g:mercury_filetype_override={"html": "javascript"}
+<
+
 ================================================================================
                                                              *mercury-languages*
 2. Languages~

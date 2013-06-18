@@ -28,7 +28,7 @@
 * `[ ]` get stdout / stderr from killed process
 * `[ ]` option: for all languages, add options to specify executable and options
 * `[ ]` option: add default option if filetype isn't recognized
-* `[ ]` option: allow option to override one filetype with another
+* `[X]` option: allow option to override one filetype with another
 
 * `[ ]` python: smarter code parsing for final print statement
 * `[ ]` python: print assignment statement

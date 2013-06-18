@@ -28,6 +28,10 @@ venom.py_fn_to_vim_command("MercurySS", execute.build(src.selection, dst.to_sele
                            allow_range=True)
 venom.py_fn_to_vim_command("MercuryBS", execute.build(src.buffer, dst.to_selection))
 
+if "mercury_filetype_override" in vim.g:
+    for key in vim.g.mercury_filetype_override:
+        execute.filetype_map[key] = vim.g.mercury_filetype_override[key]
+
 if "mercury_no_defaults" in vim.g and vim.g.mercury_no_defaults == "1":
     pass
 

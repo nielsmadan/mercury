@@ -2,9 +2,19 @@ import vim
 import mercury
 
 
+filetype_map = {
+    "qml": "javascript",
+}
+
+
 def run(code, buff):
-    ft_mod = getattr(mercury, vim.opt.filetype)
+    if vim.opt.filetype in filetype_map:
+        ft_mod = getattr(mercury, filetype_map[vim.opt.filetype])
+    else:
+        ft_mod = getattr(mercury, vim.opt.filetype)
+
     exe_fun = getattr(ft_mod, "execute")
+
     return exe_fun(code, buff)
 
 
