@@ -26,8 +26,8 @@
 
 * `[ ]` add support for: perl, vimscript, clojure, php
 * `[ ]` get stdout / stderr from killed process
-* `[ ]` option: for all languages, add options to specify executable and options
-* `[ ]` option: add default option if filetype isn't recognized
+* `[ ]` option: for all languages, add options to override executable and options
+* `[X]` option: add default option if filetype isn't recognized
 * `[X]` option: allow option to override one filetype with another
 
 * `[ ]` python: smarter code parsing for final print statement

@@ -108,6 +108,12 @@ For example "qml" files map to "javascript". It is possible to add such mappings
     let g:mercury_filetype_override={"html": "javascript"}
 <
 
+To set a filetype to use by default (whenever the filetype of the file is not
+recognized) set the option:
+>
+    let g:mercury_default_filetype="python"
+<
+
 ================================================================================
                                                              *mercury-languages*
 2. Languages~
